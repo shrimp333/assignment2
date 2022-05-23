@@ -2,6 +2,7 @@
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+
 namespace DiceRole
 {
     class Program
@@ -35,7 +36,7 @@ namespace DiceRole
                     }
                     Console.Clear();
                     Console.WriteLine("Incorrect Input");
-                    //checks to see if input was a digit between 1 and 6 if not loops back on itself
+                    //checks to see if input was a digit between 1 and 5 if not loops back on itself
                 }
                 switch (inputNum)
                 {
@@ -73,12 +74,9 @@ namespace DiceRole
                 Console.WriteLine("How many dice would you like to roll?");
                 string input = Console.ReadLine().Trim();
                 if (int.TryParse(input, out inputNum))
-                {
                     break;
-                }
                 Console.Clear();
                 Console.WriteLine("Incorrect Input");
-                //checks to see if input was a digit between 1 and 6 if not loops back on itself
             }
             Console.Clear();
             Random rnd = new Random();
@@ -109,7 +107,7 @@ namespace DiceRole
                 }
             }
         }
-
+        //Rolls dice and writes the results to the text file and adds it to the list
         static void calcKeyVals()
         {
             while (true)
@@ -126,6 +124,7 @@ namespace DiceRole
                 }
             }
         }
+        //prints key values (total, average) to the console
         static void listAllRolls()
         {
             while (true)
@@ -144,5 +143,6 @@ namespace DiceRole
                 }
             }
         }
+        //lists all the rolls that are stored in the list
     }
 }
